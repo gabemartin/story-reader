@@ -17,9 +17,12 @@ plain HTML/CSS by design.
 All tunable typography/color values are CSS custom properties in the
 `:root` block of `css/style.css` (`--font-serif`, `--font-size-base`,
 `--line-height-base`, `--measure`, `--color-bg`, `--color-text`,
-`--color-accent`, etc.). This is the intended hook for future dynamic
-font/scale/color controls — change values there, don't add inline styles
-or one-off rules in article/index markup.
+`--color-accent`, etc.). Theme presets (light, dark, beige) are applied
+via `data-theme` on `<html>`. Article pages load `js/reader.js`, which
+provides a reading-controls panel (theme, font, size, line height,
+book mode) and persists user choices in
+`localStorage` — change values on `:root` for site-wide defaults, not
+inline styles in article markup.
 
 ## Article markup shape
 
@@ -38,12 +41,35 @@ for a full example):
 
   <nav class="back-link"><a href="../index.html">&larr; Index</a></nav>
 </article>
+<script src="../js/reader.js" defer></script>
 ```
 
 - Slugs are kebab-case, ASCII only (e.g. `articles/on-margins.html`).
 - Keep paragraphs short-to-medium; use `<h2>` sparingly for subsections.
-- Every article links to `../css/style.css` and has back-links both above
-  and below the content.
+- Every article links to `../css/style.css`, includes `../js/reader.js`
+  (defer), and has back-links both above and below the content.
+- The reader script wraps article body content automatically; no extra
+  markup is required beyond the script tag.
+
+## Article images
+
+Each article may include a hero image. The convention is one rule:
+
+- Save the image as `images/<slug>.jpg` (`.png` or `.webp` also work),
+  where `<slug>` matches the article filename without extension.
+
+In the article HTML, add a figure immediately after the header:
+
+```html
+<figure class="article-art" data-image-slug="<slug>">
+  <p class="article-art-prompt">{{full image generation prompt}}</p>
+</figure>
+```
+
+`js/reader.js` probes for the image on load. If it exists, the figure
+shows the hero image with the prompt tucked into a collapsible details
+element. If not, it shows a prompt card with a **Copy prompt** button.
+Drop in an image file and push — no HTML changes needed.
 
 ## Adding an article
 

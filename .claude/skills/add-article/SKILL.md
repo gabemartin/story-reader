@@ -24,9 +24,12 @@ article and publishes it.
 3. **Create `articles/<slug>.html`** following the exact markup shape in
    `CLAUDE.md` under "Article markup shape" — copy the structure of an
    existing article in `articles/` for the boilerplate (doctype, head,
-   stylesheet link, back-links top and bottom). Only add inline styles
-   if the user explicitly asks; otherwise everything should be styled
-   through the existing classes in `css/style.css`.
+   stylesheet link, back-links top and bottom, `reader.js` script).
+   Only add inline styles if the user explicitly asks; otherwise
+   everything should be styled through the existing classes in
+   `css/style.css`. If the user provides an image prompt, include the
+   `figure.article-art` block described in `CLAUDE.md` under "Article
+   images" (save the actual image later as `images/<slug>.jpg`).
 
 4. **Add an index entry.** In `index.html`, insert a new `<li>` into
    `.article-list` in the same shape as existing entries (link, one-line
