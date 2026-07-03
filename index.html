@@ -4,10 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Story Reader</title>
+  <script>
+    try {
+      var prefs = JSON.parse(localStorage.getItem('story-reader-prefs') || '{}');
+      if (prefs.theme) document.documentElement.dataset.theme = prefs.theme;
+    } catch (e) {}
+  </script>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <header class="site-header">
+<body class="index-page">
+  <header class="site-header site-header--index">
+    <p class="site-kicker">Essays on food, craft, and culture</p>
     <h1>Story Reader</h1>
     <p class="tagline">A small collection of articles.</p>
   </header>
@@ -15,56 +22,107 @@
   <main>
     <ul class="article-list">
       <li>
-        <a href="articles/the-soul-of-slow-cooked-tradition.html">The Soul of Slow-Cooked Tradition</a>
-        <p class="excerpt">Some dishes cannot be hurried. Hungarian goulash belongs to that category: a stew whose depth comes not from a single heroic ingredient&hellip;</p>
-        <p class="meta">2026-07-03</p>
+        <a href="articles/the-soul-of-slow-cooked-tradition.html" class="article-card">
+          <span class="article-thumb-wrap"></span>
+          <span class="article-card-body">
+            <span class="article-title">The Soul of Slow-Cooked Tradition</span>
+            <span class="excerpt">Some dishes cannot be hurried. Hungarian goulash belongs to that category: a stew whose depth comes not from a single heroic ingredient&hellip;</span>
+            <span class="meta">2026-07-03</span>
+          </span>
+        </a>
       </li>
       <li>
-        <a href="articles/the-artistic-philosophy-of-gastronomy.html">The Artistic Philosophy of Gastronomy</a>
-        <p class="excerpt">Fine cooking and fine art share a vocabulary of composition, contrast, and intention. A plated dish is not merely food arranged on china&hellip;</p>
-        <p class="meta">2026-07-02</p>
+        <a href="articles/the-artistic-philosophy-of-gastronomy.html" class="article-card">
+          <span class="article-thumb-wrap"></span>
+          <span class="article-card-body">
+            <span class="article-title">The Artistic Philosophy of Gastronomy</span>
+            <span class="excerpt">Fine cooking and fine art share a vocabulary of composition, contrast, and intention. A plated dish is not merely food arranged on china&hellip;</span>
+            <span class="meta">2026-07-02</span>
+          </span>
+        </a>
       </li>
       <li>
-        <a href="articles/historical-confectionery-art.html">Historical Confectionery Art</a>
-        <p class="excerpt">Before refrigeration was commonplace, ice itself was a luxury—and a medium. Victorian kitchens produced elaborate frozen molds&hellip;</p>
-        <p class="meta">2026-07-01</p>
+        <a href="articles/historical-confectionery-art.html" class="article-card">
+          <span class="article-thumb-wrap"></span>
+          <span class="article-card-body">
+            <span class="article-title">Historical Confectionery Art</span>
+            <span class="excerpt">Before refrigeration was commonplace, ice itself was a luxury—and a medium. Victorian kitchens produced elaborate frozen molds&hellip;</span>
+            <span class="meta">2026-07-01</span>
+          </span>
+        </a>
       </li>
       <li>
-        <a href="articles/the-cultural-identity-of-flavor.html">The Cultural Identity of Flavor</a>
-        <p class="excerpt">Food is never only personal taste. Every cuisine carries the weight of geography, history, and social structure&hellip;</p>
-        <p class="meta">2026-06-30</p>
+        <a href="articles/the-cultural-identity-of-flavor.html" class="article-card">
+          <span class="article-thumb-wrap"></span>
+          <span class="article-card-body">
+            <span class="article-title">The Cultural Identity of Flavor</span>
+            <span class="excerpt">Food is never only personal taste. Every cuisine carries the weight of geography, history, and social structure&hellip;</span>
+            <span class="meta">2026-06-30</span>
+          </span>
+        </a>
       </li>
       <li>
-        <a href="articles/technical-mastery-of-global-staples.html">Technical Mastery of Global Staples</a>
-        <p class="excerpt">The world's great comfort foods earn their reputation through repetition, but mastery reveals itself in the details&hellip;</p>
-        <p class="meta">2026-06-29</p>
+        <a href="articles/technical-mastery-of-global-staples.html" class="article-card">
+          <span class="article-thumb-wrap"></span>
+          <span class="article-card-body">
+            <span class="article-title">Technical Mastery of Global Staples</span>
+            <span class="excerpt">The world's great comfort foods earn their reputation through repetition, but mastery reveals itself in the details&hellip;</span>
+            <span class="meta">2026-06-29</span>
+          </span>
+        </a>
       </li>
       <li>
-        <a href="articles/the-geography-of-fine-taste.html">The Geography of Fine Taste</a>
-        <p class="excerpt">Luxury in food is always local before it is global. Saffron tagliolini with white truffle speaks of Piedmont and Emilia&hellip;</p>
-        <p class="meta">2026-06-28</p>
+        <a href="articles/the-geography-of-fine-taste.html" class="article-card">
+          <span class="article-thumb-wrap"></span>
+          <span class="article-card-body">
+            <span class="article-title">The Geography of Fine Taste</span>
+            <span class="excerpt">Luxury in food is always local before it is global. Saffron tagliolini with white truffle speaks of Piedmont and Emilia&hellip;</span>
+            <span class="meta">2026-06-28</span>
+          </span>
+        </a>
       </li>
       <li>
-        <a href="articles/traditional-fire-and-spice.html">Traditional Fire and Spice</a>
-        <p class="excerpt">Open-flame cooking is among the oldest techniques and among the least forgiving. The tandoor concentrates heat in ways a stovetop cannot replicate&hellip;</p>
-        <p class="meta">2026-06-27</p>
+        <a href="articles/traditional-fire-and-spice.html" class="article-card">
+          <span class="article-thumb-wrap"></span>
+          <span class="article-card-body">
+            <span class="article-title">Traditional Fire and Spice</span>
+            <span class="excerpt">Open-flame cooking is among the oldest techniques and among the least forgiving. The tandoor concentrates heat in ways a stovetop cannot replicate&hellip;</span>
+            <span class="meta">2026-06-27</span>
+          </span>
+        </a>
       </li>
       <li>
-        <a href="articles/the-science-of-raw-to-cooked-transformation.html">The Science of Raw to Cooked Transformation</a>
-        <p class="excerpt">Cooking is transformation at its most visible. Raw sea bass is translucent, delicate, and chemically distinct from the opaque, flaky flesh&hellip;</p>
-        <p class="meta">2026-06-26</p>
+        <a href="articles/the-science-of-raw-to-cooked-transformation.html" class="article-card">
+          <span class="article-thumb-wrap"></span>
+          <span class="article-card-body">
+            <span class="article-title">The Science of Raw to Cooked Transformation</span>
+            <span class="excerpt">Cooking is transformation at its most visible. Raw sea bass is translucent, delicate, and chemically distinct from the opaque, flaky flesh&hellip;</span>
+            <span class="meta">2026-06-26</span>
+          </span>
+        </a>
       </li>
       <li>
-        <a href="articles/ancestral-street-food-refinement.html">Ancestral Street Food Refinement</a>
-        <p class="excerpt">Street food and fine dining are often treated as opposites, but the best kitchens blur the line. Bone marrow broth&hellip;</p>
-        <p class="meta">2026-06-25</p>
+        <a href="articles/ancestral-street-food-refinement.html" class="article-card">
+          <span class="article-thumb-wrap"></span>
+          <span class="article-card-body">
+            <span class="article-title">Ancestral Street Food Refinement</span>
+            <span class="excerpt">Street food and fine dining are often treated as opposites, but the best kitchens blur the line. Bone marrow broth&hellip;</span>
+            <span class="meta">2026-06-25</span>
+          </span>
+        </a>
       </li>
       <li>
-        <a href="articles/the-chemistry-of-pastry-and-heat.html">The Chemistry of Pastry and Heat</a>
-        <p class="excerpt">Pastry is applied thermodynamics. Sugar glass, puff pastry, and pastry cream each depend on precise relationships between temperature&hellip;</p>
-        <p class="meta">2026-06-24</p>
+        <a href="articles/the-chemistry-of-pastry-and-heat.html" class="article-card">
+          <span class="article-thumb-wrap"></span>
+          <span class="article-card-body">
+            <span class="article-title">The Chemistry of Pastry and Heat</span>
+            <span class="excerpt">Pastry is applied thermodynamics. Sugar glass, puff pastry, and pastry cream each depend on precise relationships between temperature&hellip;</span>
+            <span class="meta">2026-06-24</span>
+          </span>
+        </a>
       </li>
     </ul>
   </main>
+  <script src="js/index.js" defer></script>
 </body>
 </html>
