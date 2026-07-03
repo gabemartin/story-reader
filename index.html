@@ -4,20 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Story Reader</title>
-  <style>
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      font-family: system-ui, sans-serif;
-      background: #111;
-      color: #eee;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>Hello, world!</h1>
+  <header class="site-header">
+    <h1>Story Reader</h1>
+    <p class="tagline">A small collection of articles.</p>
+  </header>
+
+  <main>
+    <ul class="article-list">
+      <li>
+        <a href="articles/article-three.html">Article Three</a>
+        <p class="excerpt">Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra&hellip;</p>
+        <p class="meta">2026-07-02</p>
+      </li>
+      <li>
+        <a href="articles/article-two.html">Article Two</a>
+        <p class="excerpt">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum&hellip;</p>
+        <p class="meta">2026-06-30</p>
+      </li>
+      <li>
+        <a href="articles/article-one.html">Article One</a>
+        <p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore&hellip;</p>
+        <p class="meta">2026-06-28</p>
+      </li>
+    </ul>
+  </main>
 </body>
 </html>

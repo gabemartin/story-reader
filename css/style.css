@@ -1,0 +1,147 @@
+/*
+  Story Reader base styles.
+  Typography approach follows https://edwardtufte.github.io/tufte-css/ :
+  a single readable serif measure, generous line-height, minimal chrome.
+
+  All tunable values live in :root as custom properties. This is the
+  theming surface for future dynamic font/scale/color controls — change
+  values here (or via JS setting them on :root) rather than adding new
+  hardcoded styles in article or index markup.
+*/
+
+:root {
+  --font-serif: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-sans: -apple-system, "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+
+  --font-size-base: 1.25rem;
+  --line-height-base: 1.6;
+  --measure: 38em;
+
+  --color-bg: #fffff8;
+  --color-text: #111111;
+  --color-muted: #6b6b6b;
+  --color-link: #111111;
+  --color-accent: #b0413e;
+  --color-rule: #dddddd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-bg);
+}
+
+body {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  background: var(--color-bg);
+  color: var(--color-text);
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 6rem;
+}
+
+h1, h2, h3 {
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.2em;
+}
+
+h2 {
+  font-size: 1.7rem;
+  margin-top: 2.5em;
+}
+
+p {
+  margin: 1.4rem 0;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration-color: var(--color-rule);
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+/* Site header, index page */
+
+.site-header {
+  margin-bottom: 3.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.site-header h1 {
+  margin-bottom: 0.1em;
+}
+
+.tagline {
+  font-family: var(--font-sans);
+  color: var(--color-muted);
+  margin-top: 0;
+}
+
+.article-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.article-list li {
+  margin-bottom: 2.75rem;
+}
+
+.article-list a {
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+
+.article-list .excerpt {
+  color: var(--color-muted);
+  margin: 0.4rem 0;
+}
+
+.article-list .meta {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  letter-spacing: 0.02em;
+}
+
+/* Article page */
+
+.back-link {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+}
+
+.back-link a {
+  text-decoration: none;
+}
+
+article header {
+  margin: 2rem 0 2.5rem;
+}
+
+.byline {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin-top: 0.3em;
+}
+
+article > .back-link:last-of-type {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-rule);
+}
