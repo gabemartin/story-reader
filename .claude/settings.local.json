@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh auth *)",
+      "Bash(git --version)",
+      "Bash(brew list *)",
+      "Bash(command -v gh)",
+      "Read(//opt/homebrew/bin/**)",
+      "Bash(git init *)",
+      "Bash(git branch *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(git config *)",
+      "Read(//Users/gabe/.ssh/**)",
+      "Bash(ssh -T git@github.com)",
+      "Bash(git fetch *)",
+      "Bash(git pull *)",
+      "Bash(mkdir -p /Users/gabe/Sites/story-reader/articles /Users/gabe/Sites/story-reader/css /Users/gabe/Sites/story-reader/.claude/skills/add-article)",
+      "Bash(git restore *)"
+    ]
+  }
+}
